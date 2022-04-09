@@ -103,7 +103,8 @@ function isGameOver() {
         context.fillText('Game Over!', canvas.width / 8, canvas.height / 2);
 
         document.body.addEventListener('keydown', (e) => {
-            if (e.keyCode == 32) {
+            if (e.keyCode == 32 || e.keyCode == 27) {
+                // Tap "Space (Пробел)" or "Esc (Эскейп)"
                 window.location.reload();
             }
         });
@@ -112,7 +113,7 @@ function isGameOver() {
     if (gameOver) {
         context.fillStyle = 'hsl(255, 100%, 90%)';
         context.font = '18px Poppins';
-        context.fillText('Press "Space" to RESTART', canvas.width / 5, canvas.height / 1.5);
+        context.fillText('Press "Space" or "Esc" to RESTART', canvas.width / 7, canvas.height / 1.5);
     }
 
     return gameOver;
@@ -173,23 +174,23 @@ function changeSnakePosition() {
 document.body.addEventListener('keydown', keyDown);
 
 function keyDown(e) {
-    if (e.keyCode == 38) {
-        // Key Up
+    if (e.keyCode == 38 || e.keyCode == 87) {
+        // Tap "Key Up" or "W (Ц)"
         if (yVelocity == 1) return;
         yVelocity = -1;
         xVelocity = 0;
-    } else if (e.keyCode == 40) {
-        // Key Down
+    } else if (e.keyCode == 40 || e.keyCode == 83) {
+        // Tap "Key Down" or "S (Ы)"
         if (yVelocity == -1) return;
         yVelocity = 1;
         xVelocity = 0;
-    } else if (e.keyCode == 37) {
-        // Key Left
+    } else if (e.keyCode == 37 || e.keyCode == 65) {
+        // Tap "Key Left" or "A (Ф)"
         if (xVelocity == 1) return;
         yVelocity = 0;
         xVelocity = -1;
-    } else if (e.keyCode == 39) {
-        // Key right
+    } else if (e.keyCode == 39 || e.keyCode == 68) {
+        // Tap "Key Right" or "D (В)"
         if (xVelocity == -1) return;
         yVelocity = 0;
         xVelocity = 1;

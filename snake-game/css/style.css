@@ -59,6 +59,7 @@ body {
 
 .game__canvas {
   margin-top: 25px;
+  border-radius: 10px;
   -webkit-box-shadow: black 20px 10px 50px;
           box-shadow: black 20px 10px 50px;
 }
