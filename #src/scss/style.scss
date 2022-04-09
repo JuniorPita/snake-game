@@ -1,0 +1,63 @@
+// Styles for all page
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(280, 20%, 35%);
+}
+
+.game {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    transform: scale(1.6);
+
+    &__title {
+        margin-top: 150px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 28px;
+        cursor: default;
+        color: hsl(255, 100%, 90%);
+        transition: .4s ease-in-out;
+
+        &:hover {
+            color: hsl(255, 100%, 100%);
+            transform: translateX(-50px);
+        }
+    }
+
+    &__canvas {
+        margin-top: 25px;
+        box-shadow: black 20px 10px 50px;
+    }
+
+    &__author {
+        margin-top: 25px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 18px;
+        cursor: default;
+        color: hsl(255, 100%, 90%);
+        transition: .4s ease-in-out;
+
+        &:hover {
+            color: hsl(255, 100%, 100%);
+            transform: translateX(50px);
+        }
+    }
+}

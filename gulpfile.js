@@ -11,6 +11,7 @@ let path = {
     img: projectFolder + "/img/",
     fonts: projectFolder + "/fonts/",
     icons: projectFolder + "/icons/",
+    music: projectFolder + "/music/"
   },
   src: {
     html: [sourceFolder + "/*.html", "!" + sourceFolder + "/_*.html"],
@@ -19,15 +20,16 @@ let path = {
     img: sourceFolder + "/img/**/*.{jpg,gif,ico,webp}",
     fonts: sourceFolder + "/fonts/*.ttf",
     icons: sourceFolder + "/icons/*.{png,svg}",
+    music: sourceFolder + "/music/*.mp3"
   },
   watch: {
     html: sourceFolder + "/**/*.html",
     css: sourceFolder + "/scss/**/*.scss",
     js: sourceFolder + "/js/**/*.js",
     img: sourceFolder + "/img/**/*.{jpg,gif,ico,webp}",
-    icons: sourceFolder + "/icons/**/*.{png,svg}",
+    icons: sourceFolder + "/icons/**/*.{png,svg}"
   },
-  clean: "./" + projectFolder + "/",
+  clean: "./" + projectFolder + "/"
 };
 
 let { src, dest } = require("gulp"),
@@ -107,6 +109,11 @@ function js() {
     )
     .pipe(dest(path.build.js))
     .pipe(browsersync.stream());
+}
+
+function myMusic() {
+  return src(path.src.music)
+    .pipe(dest(path.build.music));
 }
 
 function images() {
@@ -231,10 +238,11 @@ function clean(params) {
 
 let build = gulp.series(
   clean,
-  gulp.parallel(js, css, html, images, fonts, icons)
+  gulp.parallel(js, css, html, images, fonts, icons, myMusic)
 );
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.music = myMusic;
 exports.icons = icons;
 exports.fontsStyle = fontsStyle;
 exports.fonts = fonts;

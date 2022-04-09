@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #5f476b;
+}
+
+.game {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transform: scale(1.6);
+      -ms-transform: scale(1.6);
+          transform: scale(1.6);
+}
+
+.game__title {
+  margin-top: 150px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 28px;
+  cursor: default;
+  color: #d9ccff;
+  -webkit-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.game__title:hover {
+  color: white;
+  -webkit-transform: translateX(-50px);
+      -ms-transform: translateX(-50px);
+          transform: translateX(-50px);
+}
+
+.game__canvas {
+  margin-top: 25px;
+  -webkit-box-shadow: black 20px 10px 50px;
+          box-shadow: black 20px 10px 50px;
+}
+
+.game__author {
+  margin-top: 25px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: default;
+  color: #d9ccff;
+  -webkit-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.game__author:hover {
+  color: white;
+  -webkit-transform: translateX(50px);
+      -ms-transform: translateX(50px);
+          transform: translateX(50px);
+}
+@supports (-webkit-appearance:none){
+
+}
