@@ -34,9 +34,7 @@ function drawGame() {
     changeSnakePosition();
     const result = isGameOver();
 
-    if (result) {
-        return;
-    }
+    if (result) return;
 
     clearScreen();
 
@@ -46,17 +44,11 @@ function drawGame() {
 
     drawScore();
 
-    if (score >= 5) {
-        speed = 16;
-    } else if (score >= 10) {
-        speed = 19;
-    } else if (score >= 20) {
-        speed = 22;
-    } else if (score >= 40) {
-        speed = 25;
-    } else {
-        speed = 13;
-    }
+    if (score >= 5) speed = 16;
+    else if (score >= 10) speed = 19;
+    else if (score >= 20) speed = 22;
+    else if (score >= 40) speed = 25;
+    else speed = 13;
 
     setTimeout(drawGame, 1000 / speed);
 }
@@ -64,20 +56,13 @@ function drawGame() {
 function isGameOver() {
     let gameOver = false;
 
-    if (yVelocity === 0 && xVelocity === 0) {
-        return false;
-    }
+    if (yVelocity === 0 && xVelocity === 0) return false;
 
     // Walls
-    if (headX < 0) {
-        gameOver = true;
-    } else if (headX === tileCount) {
-        gameOver = true;
-    } else if (headY < 0) {
-        gameOver = true;
-    } else if (headY === tileCount) {
-        gameOver = true;
-    }
+    if (headX < 0) gameOver = true;
+    else if (headX === tileCount) gameOver = true;
+    else if (headY < 0) gameOver = true;
+    else if (headY === tileCount) gameOver = true;
 
     for (let i = 0; i < snakeParts.length; i++) {
         const part = snakeParts[i];
@@ -103,10 +88,8 @@ function isGameOver() {
         context.fillText('Game Over!', canvas.width / 8, canvas.height / 2);
 
         document.body.addEventListener('keydown', (e) => {
-            if (e.keyCode == 32 || e.keyCode == 27) {
-                // Tap "Space (Пробел)" or "Esc (Эскейп)"
-                window.location.reload();
-            }
+            // Tap "Space (Пробел)" or "Esc (Эскейп)"
+            if (e.keyCode == 32 || e.keyCode == 27) window.location.reload();
         });
     }
 
