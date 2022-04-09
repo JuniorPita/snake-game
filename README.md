@@ -10,4 +10,4 @@ Project Description (Описание Проекта)
 * `БЭМ (BEM)`
 * `Netlify (Hosting)`
 
-***To open that website click here --> https://snake-game-by-juniorpita.netlify.app/***
+***To open that website click here (Кликните на ссылку, чтобы открыть сайт) --> https://snake-game-by-juniorpita.netlify.app/***
